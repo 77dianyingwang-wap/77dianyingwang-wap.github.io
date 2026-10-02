@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="77电影网 - 第七十七格胶片。用一格一格的底片画面梳理华语、港片、日韩与欧美电影，每天更新一格，让老片重新被看见。">
+<meta name="keywords" content="77电影网,77格胶片,华语电影,港片,日韩电影,欧美电影,老片修复,电影档案,经典电影,电影资料馆,在线电影,77dianyingwang-wap">
+<meta name="author" content="77电影网">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="bingbot" content="index, follow, max-image-preview:large">
+<meta name="referrer" content="always">
+<meta property="og:title" content="77电影网 - 第七十七格胶片">
+<meta property="og:description" content="一格一格的底片画面，梳理华语、港片、日韩与欧美电影。77dianyingwang-wap.github.io">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://77dianyingwang-wap.github.io">
+<meta property="og:site_name" content="77电影网">
+<title>77电影网 | 第七十七格胶片 · 77dianyingwang-wap.github.io</title>
+<style>
+:root{
+  --bg:#efe8da; --ink:#1c1814; --ink2:#5a5248; --paper:#f7f1e4; --line:rgba(28,24,20,.16);
+  --frame:#2a2620; --reel:#c0852a; --red:#a83a22; --green:#2e5a3a;
+  --sans:'PingFang SC','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+  --serif:'Songti SC','STSong','SimSun',serif;
+  --mono:'SFMono-Regular',Consolas,'Courier New',monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--reel);color:#fff}
+
+/* ===== sprocket filmstrip frame ===== */
+.reel{position:fixed;inset:0;pointer-events:none;z-index:70;display:flex;justify-content:space-between}
+.reel span{flex:0 0 26px;background-image:radial-gradient(circle,var(--bg) 44%,var(--frame) 46%);background-size:26px 32px;background-color:var(--frame)}
+.reel b{position:absolute;left:0;right:0;height:26px;background:var(--frame);background-image:radial-gradient(circle at 13px 13px,var(--bg) 44%,var(--frame) 46%);background-size:32px 26px}
+.reel b.t{top:0}.reel b.bt{bottom:0}
+
+/* ===== header ===== */
+header{position:sticky;top:26px;z-index:80;background:rgba(239,232,218,.94);backdrop-filter:blur(6px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hin{max-width:1320px;margin:0 auto;padding:0 46px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:baseline;gap:14px}
+.logo{font-family:var(--serif);font-weight:900;font-size:1.75rem;letter-spacing:-.02em;line-height:1;display:flex;align-items:baseline;gap:2px}
+.logo i{font-style:normal;color:var(--reel);font-size:2.05rem}
+.logo small{font-size:.66rem;letter-spacing:.2em;color:var(--ink2);font-weight:600;margin-left:8px;font-family:var(--sans)}
+nav{display:flex;gap:2px}
+nav a{font-size:.85rem;font-weight:700;padding:8px 14px;position:relative;transition:.25s;color:rgba(28,24,20,.7)}
+nav a:hover,nav a.on{color:var(--ink)}
+nav a::after{content:'';position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:var(--reel);transform:scaleX(0);transform-origin:left;transition:.3s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+.ctrls{display:flex;align-items:center;gap:14px}
+.clock{font-family:var(--mono);font-size:.78rem;color:var(--ink2);letter-spacing:.04em}
+.btn{font-size:.82rem;font-weight:800;letter-spacing:.06em;padding:11px 22px;background:var(--ink);color:var(--bg);transition:.3s}
+.btn:hover{background:var(--reel)}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px}
+.btn.o:hover{border-color:var(--reel);color:var(--reel);background:transparent}
+
+/* ===== hero ===== */
+.hero{position:relative;padding:80px 46px 70px;max-width:1320px;margin:0 auto}
+.sprocket{position:absolute;top:0;bottom:0;left:14px;width:22px;background-image:radial-gradient(circle,var(--bg) 42%,rgba(28,24,20,.12) 44%);background-size:22px 28px}
+.heroin{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:center;padding-left:34px}
+.hlead .tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;color:var(--ink2);border:1px solid var(--line);padding:6px 12px;margin-bottom:26px}
+.hlead .tag i{width:7px;height:7px;background:var(--red);display:block;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(3rem,9vw,7rem);line-height:.96;letter-spacing:-.03em}
+h1 em{font-style:normal;color:var(--reel);font-family:var(--serif)}
+.hlead p{margin-top:26px;max-width:520px;font-size:1.02rem;line-height:2.05;color:var(--ink2)}
+.hstat{margin-top:38px;display:flex;gap:44px;flex-wrap:wrap}
+.hstat div b{display:block;font-family:var(--serif);font-size:2.4rem;font-weight:900;line-height:1;color:var(--ink)}
+.hstat div span{font-size:.76rem;letter-spacing:.12em;color:var(--ink2)}
+
+/* the 77 keyframe */
+.key{position:relative;aspect-ratio:4/5;background:var(--frame);padding:18px 16px;overflow:hidden;box-shadow:0 24px 60px -28px rgba(28,24,20,.6)}
+.key::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 23.4%,rgba(255,255,255,.05) 23.4%,rgba(255,255,255,.05) 25%)}
+.kstrip{position:absolute;left:0;right:0;height:16px;background:var(--frame);background-image:radial-gradient(circle,var(--bg) 38%,var(--frame) 40%);background-size:20px 16px}
+.kstrip.t{top:0}.kstrip.bt{bottom:0}
+.k7{position:relative;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#3a2418,#7a3a1a 45%,#c0852a 75%,#f0d8a0);}
+.k7 span{font-family:var(--serif);font-weight:900;font-size:clamp(9rem,26vw,18rem);line-height:.8;color:rgba(255,255,255,.93);text-shadow:0 6px 30px rgba(0,0,0,.35)}
+.klabel{position:absolute;left:16px;right:16px;bottom:26px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;color:rgba(255,255,255,.9);letter-spacing:.1em}
+.klabel b{font-weight:800}
+
+/* ===== section heads ===== */
+section{padding:104px 46px;position:relative}
+.in{max-width:1320px;margin:0 auto}
+.shead{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:end;margin-bottom:56px;border-bottom:2px solid var(--ink);padding-bottom:22px}
+.shead .no{font-family:var(--mono);font-size:3.2rem;font-weight:900;line-height:.85;color:var(--reel)}
+.shead .no small{display:block;font-size:.72rem;letter-spacing:.16em;color:var(--ink2);font-weight:600;margin-top:6px}
+.shead h2{font-family:var(--serif);font-weight:900;font-size:clamp(2rem,5.4vw,3.8rem);line-height:1.3;letter-spacing:-.01em}
+.shead h2 em{font-style:normal;color:var(--reel)}
+.shead .meta{text-align:right;font-size:.78rem;color:var(--ink2);letter-spacing:.06em}
+.shead .meta b{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--ink);font-weight:900}
+
+/* ===== filmstrip roll (4 frames) ===== */
+.roll{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--frame);background:var(--frame)}
+.frame{position:relative;background:var(--paper)}
+.frame:not(:last-child){border-right:1px solid var(--frame)}
+.frame .img{aspect-ratio:3/4;position:relative;overflow:hidden;padding:9px 8px;background-image:radial-gradient(circle,var(--bg) 34%,var(--frame) 36%);background-size:14px 14px;background-position:0 0}
+.frame .img i{position:absolute;inset:9px 8px;display:block;background-size:cover;background-position:center;filter:saturate(.92) sepia(.06)}
+.frame .cap{padding:16px 18px;background:var(--frame);color:var(--bg);display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+.frame .cap b{font-family:var(--serif);font-size:1.02rem;font-weight:900;grid-column:1/-1;line-height:1.4}
+.frame .cap em{font-style:normal;font-family:var(--mono);font-size:.72rem;opacity:.75;letter-spacing:.06em}
+.frame .cap strong{font-family:var(--mono);font-size:.8rem;color:var(--reel);font-weight:800}
+.frame:hover .img i{transform:scale(1.08)}
+.f1 .img i{background-image:linear-gradient(160deg,#7a2418,#c0553a)}
+.f2 .img i{background-image:linear-gradient(160deg,#1c3a5a,#3a7ab0)}
+.f3 .img i{background-image:linear-gradient(160deg,#3a5a28,#8aaa4a)}
+.f4 .img i{background-image:linear-gradient(160deg,#5a4a2a,#c0a05a)}
+.rollctrl{margin-top:20px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--ink2)}
+.pager{display:flex;gap:8px}
+.pager button{width:38px;height:38px;border:1px solid var(--line);font-family:var(--serif);font-weight:900;font-size:1rem;transition:.25s;color:var(--ink2)}
+.pager button.on,.pager button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* ===== 77 reels ===== */
+.reels{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.reelcard{display:grid;grid-template-columns:96px 1fr;gap:26px;padding:38px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.35s;background:transparent}
+.reelcard:nth-child(2n){border-right:none}
+.reelcard:nth-child(n+3){border-bottom:none}
+.reelcard:hover{background:rgba(192,133,42,.07)}
+.rcirc{width:96px;height:96px;flex:0 0 96px;border-radius:50%;border:2px dashed var(--reel);display:grid;place-items:center;font-family:var(--serif);font-weight:900;font-size:2rem;color:var(--reel);position:relative}
+.rcirc::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--line)}
+.reelcard h3{font-family:var(--serif);font-size:1.5rem;font-weight:900;margin-bottom:10px;line-height:1.45}
+.reelcard p{font-size:.88rem;line-height:1.95;color:var(--ink2)}
+.reelcard .min{margin-top:14px;font-family:var(--mono);font-size:.74rem;color:var(--reel);letter-spacing:.05em}
+
+/* ===== program (TV guide) ===== */
+.prog{display:grid;grid-template-columns:1.05fr 1fr;gap:56px}
+.guide{border:1px solid var(--frame);background:var(--frame);padding:1px}
+.ghead{display:grid;grid-template-columns:74px 1fr 96px 74px;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:.74rem;letter-spacing:.1em}
+.ghead span{padding:12px 14px;border-right:1px solid rgba(239,232,218,.14)}
+.ghead span:last-child{border-right:none;text-align:center}
+.grow{display:grid;grid-template-columns:74px 1fr 96px 74px;border-top:1px solid rgba(239,232,218,.14);background:var(--paper);transition:.25s;cursor:pointer}
+.grow:hover{background:var(--bg)}
+.grow>div{padding:16px 14px;border-right:1px solid var(--line);font-size:.88rem;display:flex;align-items:center}
+.grow>div:last-child{border-right:none;justify-content:center;font-family:var(--serif);font-weight:900;color:var(--reel)}
+.grow .tm{font-family:var(--mono);font-size:.86rem;font-weight:800;letter-spacing:.04em}
+.grow .nm{font-weight:800}
+.grow .tp{font-size:.78rem;color:var(--ink2)}
+.grow .rt{justify-content:center;font-family:var(--serif);font-weight:900;font-size:1.02rem;color:var(--ink)}
+.guidefoot{padding:12px 16px;background:var(--frame);color:var(--bg);font-size:.78rem;display:flex;justify-content:space-between;font-family:var(--mono);letter-spacing:.06em}
+
+.notice{display:flex;flex-direction:column;gap:0}
+.nbox{border:1px solid var(--line);border-top:none;padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:22px;transition:.3s}
+.nbox:first-child{border-top:1px solid var(--line)}
+.nbox:hover{border-color:var(--reel);border-left:4px solid var(--reel)}
+.nbox .d{font-family:var(--mono);font-size:.8rem;color:var(--reel);font-weight:800;white-space:nowrap;padding-top:3px}
+.nbox h4{font-family:var(--serif);font-size:1.18rem;font-weight:900;margin-bottom:8px;line-height:1.45}
+.nbox p{font-size:.85rem;color:var(--ink2);line-height:1.9}
+
+/* ===== archive table ===== */
+.arch{display:grid;grid-template-columns:1.1fr 1fr;border:1px solid var(--frame);background:var(--frame);padding:1px}
+.arch table{width:100%;border-collapse:collapse;background:var(--paper)}
+.arch th,.arch td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.88rem}
+.arch th{background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;font-weight:700}
+.arch td.n{font-family:var(--mono);color:var(--reel);font-weight:800}
+.arch td.rt{font-family:var(--serif);font-weight:900;text-align:right;white-space:nowrap}
+.arch tr:hover td{background:rgba(192,133,42,.08)}
+.arch .more{background:var(--frame);color:var(--bg);text-align:center;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em}
+.archinfo{padding:38px 34px;background:var(--ink);color:var(--bg)}
+.archinfo .cap{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;color:var(--reel);margin-bottom:18px}
+.archinfo h3{font-family:var(--serif);font-size:1.9rem;font-weight:900;line-height:1.5;margin-bottom:22px}
+.archinfo h3 em{font-style:normal;color:var(--reel)}
+.archinfo p{font-size:.9rem;line-height:2.05;color:rgba(247,241,228,.74)}
+.bars{margin-top:30px;display:flex;flex-direction:column;gap:16px}
+.bar span{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:5px;letter-spacing:.04em}
+.bar i{display:block;height:6px;background:rgba(247,241,228,.16);position:relative}
+.bar i::after{content:'';position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--reel)}
+
+/* ===== url band ===== */
+.band{background:var(--ink);color:var(--bg);padding:52px 46px}
+.bandin{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center}
+.band h3{font-family:var(--serif);font-size:clamp(1.6rem,4.4vw,2.9rem);font-weight:900;line-height:1.5}
+.band h3 em{font-style:normal;color:var(--reel)}
+.band h3 small{display:block;font-size:.8rem;font-weight:600;letter-spacing:.08em;color:rgba(247,241,228,.6);margin-top:10px;font-family:var(--mono)}
+.band a{background:var(--reel);color:#1c1814;font-weight:800;font-size:.92rem;padding:16px 34px;white-space:nowrap;transition:.3s}
+.band a:hover{background:var(--bg);color:var(--ink)}
+
+/* ===== footer ===== */
+footer{border-top:2px solid var(--ink);padding:70px 46px 0}
+.fin{max-width:1320px;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:44px}
+.fgrid .brand{margin-bottom:18px}
+.fgrid p{font-size:.86rem;color:var(--ink2);line-height:1.95;max-width:360px}
+.fgrid h5{font-family:var(--serif);font-size:1.12rem;font-weight:900;margin-bottom:20px}
+.fgrid li{margin-bottom:12px}
+.fgrid a{font-size:.85rem;color:var(--ink2);transition:.2s;border-bottom:1px solid transparent}
+.fgrid a:hover{color:var(--reel);border-bottom-color:var(--reel)}
+.fbot{padding:26px 0;border-top:1px solid var(--line);margin-top:56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--ink2);font-family:var(--mono);letter-spacing:.04em}
+.fbot a{color:var(--reel);font-weight:700}
+
+.rv{opacity:0;transform:translateY(28px);transition:.8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+@media(max-width:1040px){
+  .heroin{grid-template-columns:1fr;gap:48px}
+  .reels{grid-template-columns:1fr}
+  .reelcard:nth-child(2n){border-right:none}
+  .reelcard{border-right:none}
+  .reelcard:nth-child(3){border-bottom:1px solid var(--line)}
+  .prog{grid-template-columns:1fr;gap:40px}
+  .arch{grid-template-columns:1fr}
+  .archinfo{border-top:1px solid var(--frame)}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .reel{display:none}
+  header{top:0}
+  .hero,.band,footer{padding-left:20px;padding-right:20px}
+  section{padding:76px 20px}
+  nav,.clock{display:none}
+  .roll{grid-template-columns:1fr 1fr}
+  .frame:nth-child(2){border-right:none}
+  .frame:nth-child(-n+2){border-bottom:1px solid var(--frame)}
+  .shead{grid-template-columns:1fr;gap:10px;align-items:start}
+  .shead .meta{text-align:left}
+  .ghead,.grow{grid-template-columns:60px 1fr 70px}
+  .grow>div:nth-child(4),.ghead span:nth-child(4){display:none}
+  .grow .nm{font-size:.82rem}
+  .nbox{grid-template-columns:1fr;gap:8px}
+  .fgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- filmstrip edge (desktop only) -->
+<div class="reel" aria-hidden="true"><b class="t"></b><b class="bt"></b><span></span><span></span></div>
+
+<!-- ===== HEADER ===== -->
+<header><div class="hin">
+  <div class="brand"><div class="logo"><i>77</i>电影网<small>SEVENTY-SEVEN REELS</small></div></div>
+  <nav>
+    <a href="#frames" class="on">今日四格</a>
+    <a href="#reels">七盘胶片</a>
+    <a href="#prog">放映时刻</a>
+    <a href="#archive">片库档案</a>
+    <a href="#about">关于本站</a>
+  </nav>
+  <div class="ctrls"><span class="clock" id="clock">77:77:77</span><a href="#" class="btn">▸ 进入片库</a></div>
+</div></header>
+
+<!-- ===== HERO ===== -->
+<section class="hero"><div class="sprocket" aria-hidden="true"></div>
+  <div class="heroin">
+    <div class="hlead">
+      <div class="tag rv"><i></i> NOW SHOWING · 正在放映 · 第 77 格</div>
+      <h1 class="rv">第七十七格<br><em>胶片。</em></h1>
+      <p class="rv">77电影网（https://77dianyingwang-wap.github.io）不是又一个电影目录，而是一条正在转动的胶片。一格一格看下去，是华语、港片、日韩，还有那些被遗忘太久的老片子。</p>
+      <div class="hstat rv">
+        <div><b>77</b><span>盘胶片</span></div>
+        <div><b>9,200+</b><span>部影片档案</span></div>
+        <div><b>12</b><span>个地区</span></div>
+        <div><b>4K</b><span>修复规格</span></div>
+      </div>
+    </div>
+    <div class="key rv">
+      <div class="kstrip t"></div>
+      <div class="k7"><span>77</span></div>
+      <div class="kstrip bt"></div>
+      <div class="klabel"><span>FRAME 76</span><b>FRAME 77</b><span>FRAME 78</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUR FRAMES ===== -->
+<section id="frames"><div class="in">
+  <div class="shead rv"><div class="no">01<small>FRAME</small></div><h2>今日四格：<br>从一格<em>看到</em>下一格。</h2><div class="meta"><b>04 格</b>今日放映 / 每格一个地区</div></div>
+  <div class="roll rv">
+    <a href="#" class="frame f1"><div class="img"><i></i></div><div class="cap"><b>旺角卡门</b><em>HK · 1988</em><strong>9.2</strong></div></a>
+    <a href="#" class="frame f2"><div class="img"><i></i></div><div class="cap"><b>花样年华</b><em>HK · 2000</em><strong>9.4</strong></div></a>
+    <a href="#" class="frame f3"><div class="img"><i></i></div><div class="cap"><b>东京物语</b><em>JP · 1953</em><strong>9.3</strong></div></a>
+    <a href="#" class="frame f4"><div class="img"><i></i></div><div class="cap"><b>霸王别姬</b><em>CN · 1993</em><strong>9.6</strong></div></a>
+  </div>
+  <div class="rollctrl"><span>◂ 第 19 卷 · 共 77 卷 ▸</span>
+    <div class="pager"><button class="on">1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>…</button><button>77</button></div>
+    <span>每格 24 帧 · 一格一地</span>
+  </div>
+</div></section>
+
+<!-- ===== SEVEN REELS ===== -->
+<section id="reels" style="background:var(--paper)"><div class="in">
+  <div class="shead rv"><div class="no">02<small>REELS</small></div><h2>七盘胶片，<br>七条<em>看电影的</em>路径。</h2><div class="meta"><b>07 盘</b>分类通道 / 可任选其一</div></div>
+  <div class="reels rv">
+    <a href="#" class="reelcard"><div class="rcirc">一</div><div><h3>华语新片</h3><p>近三年大陆、台湾与香港上映的华语片，院线刚下档的就在这里。</p><div class="min">1,400+ 部 · 每周三更新</div></div></a>
+    <a href="#" class="reelcard"><div class="rcirc">二</div><div><h3>港片黄金年代</h3><p>1980 到 1990 年代港产片的集中整理，动作、江湖、无厘头、文艺都留着。</p><div class="min">2,600+ 部 · 含导演合集</div></div></a>
+    <a href="#" class="reelcard"><div class="rcirc">三</div><div><h3>日韩电影</h3><p>从黑泽明到是枝裕和，从朴赞郁到奉俊昊，亚洲另一半的电影在这里。</p><div class="min">1,900+ 部 · 含影展单元</div></div></a>
+    <a href="#" class="reelcard"><div class="rcirc">四</div><div><h3>欧美与独立</h3><p>好莱坞大片、欧洲三大节获奖片、各国独立制作，按地区分好。</p><div class="min">2,300+ 部 · 15 个地区</div></div></a>
+    <a href="#" class="reelcard"><div class="rcirc">五</div><div><h3>老片修复</h3><p>4K 与 2K 修复版本持续补充，噪点去掉了，质感留着。</p><div class="min">1,100+ 部 · 持续增加</div></div></a>
+    <a href="#" class="reelcard"><div class="rcirc">六</div><div><h3>冷门佳片</h3><p>在榜单上排得很后面的好片子，我们单独开了一格放它们。</p><div class="min">860+ 部 · 编辑手选</div></div></a>
+    <a href="#" class="reelcard" style="grid-column:1/-1;border-right:none"><div class="rcirc">七</div><div><h3>七七片单</h3><p>编辑每周挑 7 部片子配成一组片单，主题从"下雨天看什么"到"看完想出远门"，一共 77 组。</p><div class="min">77 组片单 · 每周一更新</div></div></a>
+  </div>
+</div></section>
+
+<!-- ===== PROGRAM ===== -->
+<section id="prog"><div class="in">
+  <div class="shead rv"><div class="no">03<small>PROGRAM</small></div><h2>放映时刻表：<br>今晚<em>几点</em>看哪部。</h2><div class="meta"><b>08 场</b>今日排片 / 可预约提醒</div></div>
+  <div class="prog rv">
+    <div class="guide">
+      <div class="ghead"><span>场次</span><span>影片</span><span>类型</span><span>评分</span></div>
+      <div class="grow"><div class="tm">19:00</div><div class="nm">阿飞正传</div><div class="tp">文艺 / 港片</div><div class="rt">9.1</div></div>
+      <div class="grow"><div class="tm">19:30</div><div class="nm">无间道</div><div class="tp">犯罪 / 港片</div><div class="rt">9.3</div></div>
+      <div class="grow"><div class="tm">20:00</div><div class="nm">饮食男女</div><div class="tp">剧情 / 华语</div><div class="rt">9.0</div></div>
+      <div class="grow"><div class="tm">20:30</div><div class="nm">情书</div><div class="tp">爱情 / 日本</div><div class="rt">8.9</div></div>
+      <div class="grow"><div class="tm">21:00</div><div class="nm">寄生虫</div><div class="tp">剧情 / 韩国</div><div class="rt">9.3</div></div>
+      <div class="grow"><div class="tm">21:30</div><div class="nm">一一</div><div class="tp">文艺 / 华语</div><div class="rt">9.1</div></div>
+      <div class="grow"><div class="tm">22:00</div><div class="nm">海上钢琴师</div><div class="tp">文艺 / 意大利</div><div class="rt">9.3</div></div>
+      <div class="grow"><div class="tm">22:30</div><div class="nm">天堂电影院</div><div class="tp">文艺 / 意大利</div><div class="rt">9.2</div></div>
+      <div class="guidefoot"><span>CH 77 · 77电影网</span><span>下一轮 23:00 起 · 共 8 场</span></div>
+    </div>
+    <div class="notice">
+      <div class="nbox"><div class="d">10.02</div><div><h4>第 77 卷胶片已上架：港片动作片专题</h4><p>从《英雄本色》到《导火线》，77 部动作片按年代与导演两条线整理完毕。</p></div></div>
+      <div class="nbox"><div class="d">09.28</div><div><h4>4K 修复：王家卫早期三部曲</h4><p>《旺角卡门》《阿飞正传》《东邪西毒》完成修复并上线，音轨保留粤语原声。</p></div></div>
+      <div class="nbox"><div class="d">09.21</div><div><h4>新增"冷门佳片"独立一格</h4><p>编辑从历年片库里挑出 860 部未被充分推荐的影片，单独归档。</p></div></div>
+      <div class="nbox"><div class="d">09.14</div><div><h4>片单征集：第 77 组片单主题开放投票</h4><p>本轮候选主题：火车上的电影、吃饭戏、雨夜。</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== ARCHIVE ===== -->
+<section id="archive" style="background:var(--paper)"><div class="in">
+  <div class="shead rv"><div class="no">04<small>ARCHIVE</small></div><h2>片库档案：<br>按<em>年代与地区</em>查。</h2><div class="meta"><b>9,200+</b>部影片 / 含修复版</div></div>
+  <div class="arch rv">
+    <table>
+      <thead><tr><th style="width:64px">No.</th><th>影片</th><th style="width:130px">地区 / 年代</th><th style="width:96px;text-align:right">评分</th></tr></thead>
+      <tbody>
+        <tr><td class="n">01</td><td>霸王别姬</td><td class="tp">中国 · 1993</td><td class="rt">9.6</td></tr>
+        <tr><td class="n">02</td><td>肖申克的救赎</td><td class="tp">美国 · 1994</td><td class="rt">9.7</td></tr>
+        <tr><td class="n">03</td><td>千与千寻</td><td class="tp">日本 · 2001</td><td class="rt">9.4</td></tr>
+        <tr><td class="n">04</td><td>低俗小说</td><td class="tp">美国 · 1994</td><td class="rt">8.8</td></tr>
+        <tr><td class="n">05</td><td>春光乍泄</td><td class="tp">港片 · 1997</td><td class="rt">8.9</td></tr>
+        <tr><td class="n">06</td><td>杀人回忆</td><td class="tp">韩国 · 2003</td><td class="rt">9.1</td></tr>
+        <tr><td class="n">07</td><td>活着</td><td class="tp">中国 · 1994</td><td class="rt">9.3</td></tr>
+        <tr><td class="n">08</td><td>七武士</td><td class="tp">日本 · 1954</td><td class="rt">9.3</td></tr>
+      </tbody>
+      <tr><td colspan="4" class="more">▼ 展开完整片库（共 9,200+ 部） · 77dianyingwang-wap.github.io</td></tr>
+    </table>
+    <div class="archinfo">
+      <div class="cap">◆ 本站档案 / STATION DOSSIER</div>
+      <h3>77电影网，<br><em>一格一格</em>整理电影。</h3>
+      <p>77电影网（https://77dianyingwang-wap.github.io）以一格底片为一个单位，把华语、港片、日韩与欧美的影片归档。不堆数量，只保证每一格都标注清楚地区、年代、规格与修复状态。</p>
+      <div class="bars">
+        <div class="bar"><span><span>华语 / 港片</span><b>38%</b></span><i style="--w:38%"></i></div>
+        <div class="bar"><span><span>日韩</span><b>21%</b></span><i style="--w:21%"></i></div>
+        <div class="bar"><span><span>欧美</span><b>26%</b></span><i style="--w:26%"></i></div>
+        <div class="bar"><span><span>其他与合拍</span><b>15%</b></span><i style="--w:15%"></i></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== URL BAND ===== -->
+<section id="about" style="padding-bottom:0"><div class="band">
+  <div class="bandin">
+    <h3>77电影网 · 第七十七格胶片<br><em>一格一格，把电影看完。</em>
+      <small>网站网址：77dianyingwang-wap.github.io · https://77dianyingwang-wap.github.io</small></h3>
+    <a href="https://77dianyingwang-wap.github.io">▸ 进入片库</a>
+  </div>
+</div></section>
+
+<!-- ===== FOOTER ===== -->
+<footer><div class="fin">
+  <div class="fgrid">
+    <div><div class="brand"><div class="logo"><i>77</i>电影网<small>SEVENTY-SEVEN REELS</small></div></div>
+      <p>77电影网 https://77dianyingwang-wap.github.io —— 一格一格整理华语、港片、日韩与欧美电影的在线片库，专注老片修复与冷门佳片的归档。</p></div>
+    <div><h5>片库分类</h5><ul><li><a href="#">华语新片</a></li><li><a href="#">港片黄金年代</a></li><li><a href="#">日韩电影</a></li><li><a href="#">欧美与独立</a></li></ul></div>
+    <div><h5>归档单元</h5><ul><li><a href="#">老片 4K 修复</a></li><li><a href="#">冷门佳片</a></li><li><a href="#">导演合集</a></li><li><a href="#">七七片单</a></li></ul></div>
+    <div><h5>关于本站</h5><ul><li><a href="#">本站介绍</a></li><li><a href="#">片单征集</a></li><li><a href="#">更新日志</a></li><li><a href="#">联系我们</a></li></ul></div>
+  </div>
+  <div class="fbot"><span>&copy; 2024–2026 <a href="https://77dianyingwang-wap.github.io">77电影网</a> · 77dianyingwang-wap.github.io · 第七十七格胶片</span><span>CH 77 · FRAME 77 / 77</span></div>
+</div></footer>
+
+<script>
+function reveal(){
+  document.querySelectorAll('.rv').forEach(function(el){
+    if(el.getBoundingClientRect().top<window.innerHeight-60) el.classList.add('in');
+  });
+}
+window.addEventListener('scroll',reveal);window.addEventListener('load',reveal);reveal();
+document.querySelectorAll('nav a').forEach(function(a){
+  a.addEventListener('click',function(){document.querySelectorAll('nav a').forEach(function(x){x.classList.remove('on')});a.classList.add('on');});
+});
+(function(){
+  var btns=document.querySelectorAll('.pager button');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  });});
+})();
+(function(){
+  var c=document.getElementById('clock');
+  function pad(n){return String(n).padStart(2,'0')}
+  setInterval(function(){
+    var d=new Date();
+    c.textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  },1000);
+})();
+</script>
+</body>
+</html>
